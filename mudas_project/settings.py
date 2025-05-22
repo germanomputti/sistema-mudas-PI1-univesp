@@ -1,27 +1,18 @@
+from pathlib import Path
 import os
 import dj_database_url
 
-from pathlib import Path
-
-import pymysql
-pymysql.install_as_MySQLdb()
-
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "django-insecure-x=37*9m&a+4tt_*5mtx%on0tsll9f1op^i2(*1@s-fgm5c(#hm"
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-import os
-
 ALLOWED_HOSTS = ['sistema-mudas-pi1-univesp.onrender.com']
+
+DATABASES = {
+    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+}
 
 
 
@@ -67,14 +58,6 @@ TEMPLATES = [
 WSGI_APPLICATION = "mudas_project.wsgi.application"
 
 
-# Database
-# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-
-import dj_database_url
-
-DATABASES = {
-    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
-            }
 
 
 # Password validation

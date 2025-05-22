@@ -27,3 +27,9 @@ from catalogo.views import editar_muda
 urlpatterns += [
     path('editar/<int:muda_id>/', editar_muda, name='editar_muda'),
 ]
+
+from catalogo.views import rodar_migrate
+
+urlpatterns += [
+    path('rodar-migrate/', rodar_migrate),
+]

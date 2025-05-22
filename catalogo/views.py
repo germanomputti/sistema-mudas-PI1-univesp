@@ -49,3 +49,5 @@ def editar_muda(request, muda_id):
     else:
         form = MudaPlantadaForm(instance=muda)
     return render(request, 'catalogo/editar_muda.html', {'form': form, 'muda': muda})
+
+

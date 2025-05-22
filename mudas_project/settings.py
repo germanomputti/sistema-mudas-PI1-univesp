@@ -1,4 +1,5 @@
-
+import os
+import dj_database_url
 
 from pathlib import Path
 
@@ -69,16 +70,11 @@ WSGI_APPLICATION = "mudas_project.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+import dj_database_url
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mudas_db',
-        'USER': 'root',         # ou outro usuário que você usa
-        'PASSWORD': 'univesp1234',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
-}
+    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+            }
 
 
 # Password validation

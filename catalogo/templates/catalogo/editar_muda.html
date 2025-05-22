@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar muda</title>
+    <link rel="stylesheet" href="{% static 'catalogo/estilo.css' %}">
+</head>
+<body>
+
+<h1>Editar muda: {{ muda.especie.nome }}</h1>
+
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Salvar alterações</button>
+</form>
+
+<a href="/" class="button-link">← Voltar</a>
+
+</body>
+</html>

@@ -1,5 +1,5 @@
 from django import forms
-from .models import MudaPlantada
+from .models import MudaPlantada, Especie
 
 class MudaPlantadaForm(forms.ModelForm):
     class Meta:

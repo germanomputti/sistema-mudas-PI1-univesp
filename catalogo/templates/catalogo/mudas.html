@@ -26,7 +26,9 @@
             <th>Espécie</th>
             <th>Data de plantio</th>
             <th>Previsão muda pronta</th>
+            <th>Preço por muda</th>
             <th>Previsão floração</th>
+            <th>Preço por flor</th>
             <th>Quantidade</th>
             {% if user.is_authenticated %}
                 <th>Ações</th>
@@ -37,6 +39,8 @@
             <td>{{ muda.especie.nome }}</td>
             <td>{{ muda.data_plantio }}</td>
             <td>{{ muda.data_muda }}</td>
+            <td>{{ muda.especie.preco_muda_formatado }}</td>
+            <td>{{ muda.especie.preco_flor_formatado }}</td>
             <td>{{ muda.data_flor }}</td>
             <td>{{ muda.quantidade }}</td>
             <td>

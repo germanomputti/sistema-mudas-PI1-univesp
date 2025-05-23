@@ -10,6 +10,12 @@ class Especie(models.Model):
 
     def __str__(self):
         return self.nome
+    
+    def preco_muda_formatado(self):
+        return f"R$ {self.preco_muda:,.2f}".replace('.', ',')
+    
+    def preco_flor_formatado(self):
+        return f"R$ {self.preco_flor:,.2f}".replace('.', ',')
 
 class MudaPlantada(models.Model):
     especie = models.ForeignKey(Especie, on_delete=models.CASCADE)
